@@ -4,13 +4,17 @@
   <div class="container">
 
     <div class="content">
+      <p>Written by: 
+        <?php the_author_posts_link(); ?></p>
       <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
         <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
           <h1 class="entry-title"><?php the_title(); ?></h1>
 
           <div class="entry-meta">
-            <?php hackeryou_posted_on(); ?>
+          hello
+            <p>
+            <?php echo get_avatar(get_the_author_email(), "80"); ?>posted by <?php echo $author = get_the_author(); ?> on <?php echo get_the_date()?> </p>
           </div><!-- .entry-meta -->
 
           <div class="entry-content">
